@@ -22,6 +22,6 @@ def test_challenge3():
     """ Test to decode a message xord against a single character """
     coded_text = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736"
     decoded_text = "Cooking MC's like a pound of bacon"
-    mydecode = challenge3.single_xor_decode(coded_text)
+    mydecode = challenge3.single_xor_decode(coded_text)['text']
     assert(mydecode == decoded_text)
-
+    

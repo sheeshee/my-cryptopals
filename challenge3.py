@@ -13,7 +13,7 @@ def single_xor_decode(message):
             'key': ref
         }
     rank = sorted(collection, key=lambda x: collection[x]['score'])[::-1]
-    return collection[rank[0]]['text']
+    return collection[rank[0]]
 
 
 def score(message):
