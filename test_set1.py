@@ -1,5 +1,6 @@
 import challenge1
 import challenge2
+import challenge3
 
 def test_challenge1():
     """ Tests the byte to text conversion """
@@ -16,3 +17,11 @@ def test_challenge2():
     input2 = "686974207468652062756c6c277320657965"
     xord = challenge2.string_xor(input1, input2)
     assert(target_string == xord)
+
+def test_challenge3():
+    """ Test to decode a message xord against a single character """
+    coded_text = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736"
+    decoded_text = "Cooking MC's like a pound of bacon"
+    mydecode = challenge3.single_xor_decode(coded_text)
+    assert(mydecode == decoded_text)
+

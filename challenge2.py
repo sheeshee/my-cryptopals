@@ -1,4 +1,4 @@
-from challenge1 import hex_to_bytes, bytes_to_hex
+from challenge1 import hex_to_bytes
 from codecs import decode, encode
 
 def string_xor(hex_1, hex_2):
