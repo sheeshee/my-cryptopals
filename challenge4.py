@@ -18,5 +18,5 @@ def find_the_line(lines):
     return decoded_lines[loc_max]['text']
 
 
-col = find_the_line(get_input_file())
-print(col)
+the_line = find_the_line(get_input_file())
+print(the_line)
