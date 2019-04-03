@@ -1,9 +1,13 @@
 from challenge1 import hex_to_bytes
 
 
-def single_xor_decode(message):
+def single_xor_decode_from_string(message):
     """ Applies xor between a single char and a series of chars """
     byte_array = hex_to_bytes(message)
+    return single_xor_decode(byte_array)
+
+
+def single_xor_decode(byte_array):
     collection = {}
     for ref in [i for i in range(255)]:
         decoded = ''.join([chr(ref ^ element) for element in byte_array])
@@ -14,7 +18,6 @@ def single_xor_decode(message):
         }
     rank = sorted(collection, key=lambda x: collection[x]['score'])[::-1]
     return collection[rank[0]]
-
 
 def score(message):
     """ returns an array of counted letters according to "ETAOIN SHRDLU" """

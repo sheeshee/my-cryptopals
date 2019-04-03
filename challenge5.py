@@ -3,18 +3,22 @@ def string_to_byte_array(string):
     return [i for i in bytes(string, 'utf-8')]
 
 def byte_array_to_string(bytes):
-    ''.join([chr(b) for b in bytes])
+    return ''.join([chr(b) for b in bytes])
 
 
-def encrypter(message, key):
-    """ Encrypts a single line using a key """
+def encrypter(bytified_msg, key):
     key_length = len(key)
     bytified_key = string_to_byte_array(key)
-    bytified_msg = string_to_byte_array(message)
     secret = ''
     for i, msg_byte in enumerate(bytified_msg):
         new_byte = bytified_key[i % key_length] ^ msg_byte
         secret += '{0:0{1}x}'.format(new_byte, 2)
+    return secret
+
+def encrypter_from_string(message, key):
+    """ Encrypts a single line using a key """
+    bytified_msg = string_to_byte_array(message)
+    secret = encrypter(bytified_msg, key)
     return secret
 
 
